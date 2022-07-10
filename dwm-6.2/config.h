@@ -41,6 +41,7 @@ static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
+     *	use 'xprop' command to access attributes to the specified window
 	 */
 //	/* class      instance    title       tags mask     isfloating   isfakefullscreen monitor */
 //	{ "Gimp",     NULL,       NULL,       0,            1,           0,               -1 },
@@ -55,6 +56,7 @@ static const Rule rules[] = {
 	{ "stalonetray",   NULL,  NULL,       0,            1,           0,               -1,      0   },
 	{"xpad",      NULL,       NULL,       0,            1,           0,               -1,      0   },
 	{ "Freechat", NULL,       NULL,       1 << 3,       1,           0,               -1,      0   },
+	{ "URxvt",    "urxvtq",   NULL,       0,            1,           0,               -1,      0   },
 	{ NULL,       NULL,       "spad1",    0,            0,           0,               -1,      '1' },
 };
 
@@ -84,7 +86,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "urxvtc", NULL };
 
 
 /*First arg only serves to match against key in rules*/
